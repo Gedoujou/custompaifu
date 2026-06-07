@@ -62,7 +62,7 @@
         document.getElementById('submit').addEventListener('click', async () => {
             const url = document.getElementById('url').value;
 
-            const logId = url.substr(url.indexOf('2'));;
+            const logId = url.substr(url.indexOf('2'));
             console.log(logId)
 
             if (!logId) {
@@ -77,9 +77,19 @@
             });
 
             const text = await res.text();
+
             const parser = new DOMParser();
-            const mjlog = parser.parseFromString(text, "text/html")
-            console.log(mjlog.querySelectorAll("INIT"))
+            const mjlog = parser.parseFromString(text, "text/html");
+            const init = mjlog.querySelectorAll("INIT");
+
+            const seedlist = []
+            const initjp = ["東一局","東二局","東三局","東四局","南一局","南二局","南三局","南四局","西一局","西二局","西三局","西四局","北一局","北二局","北三局","北四局"]
+            for(let i of init){
+                const seed = i.getAttribute("seed").slice(0,2);
+                const seedjp = initjp[seed[0]] + new Intl.NumberFormat('ja-JP-u-nu-hanidec').format(seed[1]);
+                seedlist.push(seedjp);
+            }
+            console.log(seedlist);
         });
     </script>
 </html>
