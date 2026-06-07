@@ -62,7 +62,8 @@
         document.getElementById('submit').addEventListener('click', async () => {
             const url = document.getElementById('url').value;
 
-            const logId = url.substr(url.indexOf('2') + 1);;
+            const logId = url.substr(url.indexOf('2'));;
+            console.log(logId)
 
             if (!logId) {
                 alert('URLが正しくありません');
