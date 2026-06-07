@@ -86,6 +86,7 @@
             const initjp = ["東一局","東二局","東三局","東四局","南一局","南二局","南三局","南四局","西一局","西二局","西三局","西四局","北一局","北二局","北三局","北四局"]
             for(let i of init){
                 const seed = i.getAttribute("seed").slice(0,2);
+                console.log(seed[1])
                 const honba = new Intl.NumberFormat('ja-JP-u-nu-hanidec').format(seed[1]);
                 const seedjp = initjp[seed[0]] + honba + "本場"
                 seedlist.push(seedjp);
