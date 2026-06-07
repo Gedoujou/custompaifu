@@ -1,0 +1,48 @@
+html *{
+    position: relative;
+    user-select: none;
+}
+
+h1{
+    text-align: center;
+}
+
+#input{
+    text-align: center;
+    margin-top: 10px;
+}
+#input input{
+    width: 52%;
+    font-size: 20px;
+    padding: 0.46em;
+    transition: 0.3s;
+    letter-spacing: 1px;
+    border: none;
+    border-bottom: 2px solid #000;
+    background: transparent;
+    color: #000;
+}
+#input input:focus{
+    outline: none;
+    border-bottom: 2px solid #ff3535;
+}
+
+.button{
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    padding: .6em 1.1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #b0b0b0;
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.button:hover{
+    background-color: #cacaca;
+}
