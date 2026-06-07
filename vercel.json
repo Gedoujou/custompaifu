@@ -1,13 +1,14 @@
 {
   "builds": [
-    { "src": "index.js", "use": "@vercel/node" },
-    { "src": "index.css", "use": "@vercel/static" },
-    { "src": "html.js", "use": "@vercel/static" }
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/index.css", "dest": "/index.css" },
-    { "src": "/html.js", "dest": "/html.js" },
-    { "src": "/fetch-log", "dest": "/index.js" },
-    { "src": "/(.*)", "dest": "/index.js" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
   ]
 }
