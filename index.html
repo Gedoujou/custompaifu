@@ -45,6 +45,8 @@
                 background-color: #cacaca;
         }
     </style>
+
+
     <head>
         <meta charset="utf-8">
         <title>牌譜コンバータ</title>
@@ -74,7 +76,9 @@
             });
 
             const text = await res.text();
-            console.log(text)
+            const parser = new DOMParser();
+            const mjlog = parser.parseFromString(text, "text/html")
+            console.log(mjlog.querySelectorAll("INIT"))
         });
     </script>
 </html>
