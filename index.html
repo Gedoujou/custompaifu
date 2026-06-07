@@ -1,38 +1,4 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>牌譜コンバータ</title>
-    </head>
-    <h1>天鳳牌譜コンバータ</h1>
-    <div id="input">
-        <input type="text" placeholder="牌譜のURLを入力" id="url" autocomplete="off">
-    </div>
-    <button id="submit" class="button">送信！</button>
-    <pre id="result"></pre>
-
-    <script>
-        document.getElementById('submit').addEventListener('click', async () => {
-            const url = document.getElementById('url').value;
-
-            const logId = url.substr(url.indexOf('2') + 1);;
-
-            if (!logId) {
-                alert('URLが正しくありません');
-                return;
-            }
-
-            const res = await fetch('/fetch-log', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ logId })
-            });
-
-            const text = await res.text();
-            console.log(text)
-        });
-    </script>
-
-    
     <style>
         html *{
             position: relative;
@@ -79,4 +45,36 @@
                 background-color: #cacaca;
         }
     </style>
+    <head>
+        <meta charset="utf-8">
+        <title>牌譜コンバータ</title>
+    </head>
+    <h1>天鳳牌譜コンバータ</h1>
+    <div id="input">
+        <input type="text" placeholder="牌譜のURLを入力" id="url" autocomplete="off">
+    </div>
+    <button id="submit" class="button">送信！</button>
+    <pre id="result"></pre>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', async () => {
+            const url = document.getElementById('url').value;
+
+            const logId = url.substr(url.indexOf('2') + 1);;
+
+            if (!logId) {
+                alert('URLが正しくありません');
+                return;
+            }
+
+            const res = await fetch('/fetch-log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ logId })
+            });
+
+            const text = await res.text();
+            console.log(text)
+        });
+    </script>
 </html>
