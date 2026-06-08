@@ -88,7 +88,7 @@
                 const kyoku = i.getAttribute("seed")[0];
                 const honba = i.getAttribute("seed")[1];
                 const honbajp = new Intl.NumberFormat('ja-JP-u-nu-hanidec').format(honba);
-                const seedjp = initjp[seed[0]] + honba + "本場"
+                const seedjp = initjp[kyoku] + honba + "本場"
                 seedlist.push(seedjp);
             }
             console.log(seedlist);
