@@ -83,12 +83,10 @@
             const init = mjlog.querySelectorAll("INIT");
 
             const seedlist = []
-            const initjp = ["東一局","東二局","東三局","東四局","南一局","南二局","南三局","南四局","西一局","西二局","西三局","西四局","北一局","北二局","北三局","北四局"]
+            const initjp = ["東1局","東2局","東3局","東4局","南1局","南2局","南3局","南4局","西1局","西2局","西3局","西4局","北1局","北2局","北3局","北4局"]
             for(let i of init){
                 const seed = i.getAttribute("seed").split(",");
-                console.log(seed);
-                const honba = new Intl.NumberFormat('ja-JP-u-nu-hanidec').format(seed[1]);
-                const seedjp = initjp[seed[0]] + honba + "本場"
+                const seedjp = initjp[seed[0]] + seed[1] + "本場"
                 seedlist.push(seedjp);
             }
             console.log(seedlist);
